@@ -1,50 +1,58 @@
-# 🌙 Moonlit Post — AI-Powered Aesthetic Content Generator
+# 🌙 Luxury Postcard — AI Aesthetic Message Generator
 
-Moonlit Post is a visually rich, AI-powered web application that generates beautifully styled posts with distinct moods (“vibes”) and formats them for social sharing.
-
-It focuses on combining **AI-generated content with aesthetic presentation**, creating posts that feel expressive, emotional, and visually unique.
+Luxury Postcard is a visually rich web app that generates beautifully styled, mood-based digital postcards using AI-inspired prompts.
 
 ---
 
-## 🌐 Run Locally
+## ✨ Features
 
-👉 http://localhost:3000  
-
----
-
-## 🚀 Features
-
-- ✨ AI-generated aesthetic content (via Groq API)
-- 🎭 Multiple visual “vibes” with distinct styling
-- 🧠 Mood-based content generation
-- 💾 Message preservation during generation
-- 📤 Export-ready formatted posts (for social media)
-- 🔐 Secure API handling via backend (.env)
+* Mood-based message generation (romantic, poetic, calm, dark, etc.)
+* Beautiful aesthetic UI with soft animations
+* Export/share styled postcards
+* Works instantly in browser (no install)
 
 ---
 
-## 🧠 Project Concept
+## 🌐 Live Demo
 
-Most AI text tools generate plain content.
-
-Moonlit Post enhances this by:
-- adding **visual identity to text**
-- making content feel **expressive and styled**
-- enabling quick creation of shareable posts  
+https://falak8484.github.io/luxury-postcard/
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 How to Use
 
-- Node.js  
-- Express.js  
-- HTML, CSS, JavaScript  
-- Groq API (LLM-based content generation)  
+1. Open the website
+2. Enter your message or prompt
+3. Choose a mood/style
+4. Generate your postcard
+5. Export or share
 
 ---
 
-## ⚙️ Setup & Run
+## 🧠 What This Project Shows
 
-### 1. Install dependencies
-```bash
-npm install
+* UI/UX design + aesthetics
+* Frontend logic and state handling
+* Creative AI-inspired product thinking
+
+---
+
+## 📸 Screenshots
+
+![Postcard](postcard/postcard1.png)
+
+![Mood UI](postcard/postcard2.png)
+
+![Mood UI](postcard/postcard3.png)
+
+![Mood UI](postcard/postcard4.png)
+
+![Mood UI](postcard/postcard5.png)
+
+
+---
+
+## 🧑‍💻 Author
+
+Falak Shaikh
+B.Tech Computer Science (Cyber Security)
