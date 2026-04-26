@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moonlit Post</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-theme="romantic">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grain"></div>
+
+  <main class="app-shell">
+    <section class="hero-card glass-card reveal">
+      <div class="hero-copy">
+        <p class="eyebrow">Moonlit Post</p>
+        <h1>Your message, wrapped in vintage beauty.</h1>
+        <p class="subcopy">Generate elegant AI postcards with a hidden backend key, richer aesthetic themes, and prettier export for sharing.</p>
+      </div>
+      <div class="hero-badges">
+        <span>Luxury postcard export</span>
+        <span>Live-host ready</span>
+      </div>
+    </section>
+
+    <section class="workspace reveal">
+      <div class="controls glass-card">
+        <div class="section-head">
+          <h2>Compose</h2>
+          <p>Write the real message first. The AI will polish it without losing the meaning.</p>
+        </div>
+
+        <div class="grid two">
+          <label class="field">
+            <span>Destination</span>
+            <input id="destination" type="text" placeholder="Paris, Kyoto, Florence..." />
+          </label>
+          <label class="field">
+            <span>Signed by</span>
+            <input id="sender" type="text" placeholder="Clara Bennett" />
+          </label>
+        </div>
+
+        <div class="grid two">
+          <label class="field">
+            <span>Recipient</span>
+            <input id="recipient" type="text" placeholder="Eleanor Hart" />
+          </label>
+          <label class="field">
+            <span>Vibe</span>
+            <select id="vibe">
+              <option value="romantic">Romantic Rose</option>
+              <option value="dreamy">Dreamy Moonmist</option>
+              <option value="melancholy">Melancholy Rainletter</option>
+              <option value="adventure">Adventure Compass</option>
+              <option value="classic">Classic Gilded</option>
+              <option value="darkacademia">Dark Academia Ink</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field full">
+          <span>Your real message</span>
+          <textarea id="message" rows="7" placeholder="I reached safely and the streets here are so beautiful at dusk. I kept thinking how much you would have loved the little cafés and warm lights. I miss you and wanted to send a small note before the evening grew late."></textarea>
+        </label>
+
+        <div class="slider-wrap">
+          <div class="slider-head">
+            <span>Rewrite strength</span>
+            <strong id="strengthLabel">Balanced</strong>
+          </div>
+          <input id="rewriteStrength" type="range" min="0" max="2" step="1" value="1" />
+          <div class="slider-notes">
+            <small>Light polish</small>
+            <small>Balanced</small>
+            <small>Rich vintage</small>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="generateBtn" class="primary-btn">Generate postcard</button>
+          <button id="regenerateBtn" class="ghost-btn">Regenerate</button>
+          <button id="clearBtn" class="ghost-btn">Clear</button>
+        </div>
+
+        <div id="status" class="status">Ready to compose.</div>
+      </div>
+
+      <div class="preview-column">
+        <div class="preview-top glass-card">
+          <div>
+            <p class="eyebrow">Preview</p>
+            <h2 id="themeTitle">Romantic Rose</h2>
+          </div>
+          <div class="export-actions">
+            <button id="copyBtn" class="ghost-btn sm">Copy text</button>
+            <button id="downloadTextBtn" class="ghost-btn sm">Download text</button>
+            <button id="downloadPngBtn" class="primary-btn sm">Download PNG</button>
+          </div>
+        </div>
+
+        <div id="postcardFrame" class="postcard-frame theme-romantic reveal-card">
+          <div class="sparkle sparkle-a"></div>
+          <div class="sparkle sparkle-b"></div>
+          <div class="sparkle sparkle-c"></div>
+
+          <div class="postcard-print instagram-ratio" id="captureArea">
+            <div class="paper-overlay"></div>
+            <div class="paper-corner corner-tl"></div>
+            <div class="paper-corner corner-br"></div>
+
+            <div class="left-pane">
+              <div class="pane-head">
+                <div>
+                  <div class="tiny-label">Post Card</div>
+                  <h3 id="displayRecipient">To Eleanor Hart</h3>
+                </div>
+                <div class="stamp-box" id="stampBox">
+                  <span class="stamp-icon">✦</span>
+                  <span class="stamp-name">Rose Air Mail</span>
+                </div>
+              </div>
+              <div id="generatedText" class="generated-text typing-text">Your finished postcard will appear here.</div>
+              <div class="signature-line" id="signatureLine">Yours, Clara Bennett</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="right-pane">
+              <div class="seal" id="sealText">ROMANCE</div>
+              <div class="postmark">
+                <span id="displayDestinationTop">PARIS</span>
+                <strong id="displayYear">1927</strong>
+                <span>VINTAGE MAIL</span>
+              </div>
+              <div class="address-block">
+                <div class="address-label">Destination</div>
+                <div class="address-line"></div>
+                <div class="address-line short"></div>
+                <div class="destination-main" id="displayDestination">Paris</div>
+              </div>
+              <div class="theme-blurb" id="themeBlurb">Soft rose-tinted light, tender longing, and golden evening warmth.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="history glass-card">
+          <div class="section-head small">
+            <h3>Saved postcards</h3>
+            <p>Stored locally in your browser.</p>
+          </div>
+          <div id="historyList" class="history-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
